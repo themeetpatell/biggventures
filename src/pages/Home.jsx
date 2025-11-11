@@ -107,7 +107,14 @@ const brands = [
   },
 ]
 
-const investors = ['Y Combinator', 'Sequoia', 'a16z', 'Accel', 'Tiger Global', 'Lightspeed', 'Index Ventures', 'Benchmark']
+const investors = [
+  { name: 'In5 Dubai', logo: null, website: 'https://in5.ae', isText: true },
+  { name: '24six9', logo: 'https://24six9.com/logo.png', website: 'https://24six9.com' },
+  { name: 'Y Combinator', logo: 'https://www.ycombinator.com/static/logo-yc-7b0c0e0c2b0c0e0c2b0c0e0c2b0c0e0c2.png', website: 'https://www.ycombinator.com' },
+  { name: 'Headstart', logo: 'https://headstart.in/logo.png', website: 'https://headstart.in' },
+  { name: 'Xartup', logo: 'https://xartup.com/logo.png', website: 'https://xartup.com' },
+  { name: 'IIM-A', logo: 'https://www.iima.ac.in/sites/default/files/iima-logo.png', website: 'https://www.iima.ac.in' },
+]
 const testimonials = [
   { name: 'Sarah Chen', role: 'Founder, TechFlow', quote: 'Biggbizz transformed how we build. From finding co-founders to scaling globally—everything in one universe.' },
   { name: 'Marcus Rodriguez', role: 'CEO, GrowthLabs', quote: 'The integrated approach is game-changing. We went from idea to Series A in 18 months.' },
@@ -165,8 +172,8 @@ const TestimonialSlider = ({ testimonials }) => {
 
   return (
     <div className="relative h-[400px] sm:h-[450px] md:h-[500px] overflow-hidden">
-      <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 bg-gradient-to-r from-purple-950/50 via-purple-950/20 to-transparent z-20 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 bg-gradient-to-l from-purple-950/50 via-purple-950/20 to-transparent z-20 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 md:w-32 bg-gradient-to-r from-purple-950/20 sm:from-purple-950/30 md:from-purple-950/50 via-purple-950/10 sm:via-purple-950/15 md:via-purple-950/20 to-transparent z-20 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 md:w-32 bg-gradient-to-l from-purple-950/20 sm:from-purple-950/30 md:from-purple-950/50 via-purple-950/10 sm:via-purple-950/15 md:via-purple-950/20 to-transparent z-20 pointer-events-none" />
       
       <div className="relative h-full overflow-hidden">
         <div
@@ -178,7 +185,7 @@ const TestimonialSlider = ({ testimonials }) => {
             const gradient = gradientColors[index % gradientColors.length]
             
             return (
-              <motion.div
+            <motion.div
                 key={`${testimonial.name}-${index}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -190,34 +197,34 @@ const TestimonialSlider = ({ testimonials }) => {
                   <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-br ${gradient}`} />
                   
                   <div className="relative z-10 h-full flex flex-col justify-between">
-                    <div>
+                  <div>
                       <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-purple-500/20 mb-3 md:mb-4 font-serif leading-none">
-                        "
-                      </div>
+                      "
+                    </div>
                       <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-200 leading-relaxed font-light mb-4 md:mb-6">
                         {testimonial.quote}
-                      </p>
-                    </div>
-                    
+                    </p>
+                  </div>
+                  
                     <div className="flex items-center gap-4 md:gap-5 pt-4 md:pt-6 border-t border-white/10">
                       <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center text-xl sm:text-2xl font-black text-white shadow-lg flex-shrink-0`}>
                         {testimonial.name[0]}
-                      </div>
-                      <div>
+                    </div>
+                    <div>
                         <div className="font-black text-lg sm:text-xl md:text-2xl text-white mb-1">
                           {testimonial.name}
-                        </div>
+                      </div>
                         <div className="text-sm sm:text-base md:text-lg text-slate-400">
                           {testimonial.role}
-                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
+            </motion.div>
             )
           })}
-        </div>
+                  </div>
       </div>
     </div>
   )
@@ -262,13 +269,13 @@ const AutoSlider = ({ brands }) => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.15),transparent_70%)]" />
       
       {/* Left Gradient Fade */}
-      <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-purple-950 via-purple-950/80 to-transparent z-20 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 lg:w-48 bg-gradient-to-r from-purple-950/40 sm:from-purple-950/60 md:from-purple-950 via-purple-950/40 sm:via-purple-950/60 md:via-purple-950/80 to-transparent z-20 pointer-events-none" />
       
       {/* Right Gradient Fade */}
-      <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-purple-950 via-purple-950/80 to-transparent z-20 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 lg:w-48 bg-gradient-to-l from-purple-950/40 sm:from-purple-950/60 md:from-purple-950 via-purple-950/40 sm:via-purple-950/60 md:via-purple-950/80 to-transparent z-20 pointer-events-none" />
 
       <div className="relative h-full flex items-center overflow-hidden py-8">
-        <motion.div
+      <motion.div
           className="flex gap-6 h-full items-center"
           animate={{
             x: isPaused ? undefined : [0, -totalWidth],
@@ -322,22 +329,22 @@ const AutoSlider = ({ brands }) => {
                       <div className="flex-1 flex flex-col">
                         <h3 className="text-3xl md:text-4xl font-black mb-2 group-hover:text-gradient transition-all duration-500 leading-tight">
                           {brand.title}
-                        </h3>
-                        
+                  </h3>
+                  
                         <p className="text-lg md:text-xl text-purple-400 mb-3 font-bold">
                           {brand.tagline}
-                        </p>
-                        
+                  </p>
+                  
                         <p className="text-sm md:text-base text-slate-300 leading-relaxed mb-5 flex-1 font-light">
                           {brand.description}
-                        </p>
-                        
+                  </p>
+                  
                         <div className="text-purple-400 text-base md:text-lg font-bold group-hover:translate-x-2 transition-transform duration-300 inline-flex items-center gap-2">
                           Explore <span className="group-hover:translate-x-1 transition-transform">→</span>
-                        </div>
-                      </div>
-                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
                 </a>
               ) : (
                 <Link to={brand.path}>
@@ -350,7 +357,7 @@ const AutoSlider = ({ brands }) => {
                     
                     <div className="relative z-10 h-full flex flex-col">
                       {/* Icon */}
-                      <motion.div
+        <motion.div
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         className={`w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-gradient-to-br ${brand.color} flex items-center justify-center text-4xl md:text-5xl font-black text-white shadow-xl mb-5 flex-shrink-0 relative`}
                       >
@@ -758,19 +765,42 @@ const Home = () => {
             Backed By
           </motion.h2>
           
-          <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 flex-wrap">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 flex-wrap">
             {investors.map((investor, index) => (
-              <motion.div
-                key={investor}
+              <motion.a
+                key={investor.name}
+                href={investor.website}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ scale: 1.1, y: -3 }}
-                className="glass-effect rounded-lg md:rounded-xl px-4 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 md:py-6 text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-slate-300 hover:text-white transition-all duration-300 border-2 border-white/10 hover:border-white/30 hover:shadow-lg hover:shadow-purple-500/20"
+                whileHover={{ scale: 1.15, y: -5 }}
+                className="glass-effect rounded-xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 transition-all duration-300 border-2 border-white/10 hover:border-white/30 hover:shadow-lg hover:shadow-purple-500/20 flex items-center justify-center"
               >
-                {investor}
-              </motion.div>
+                {investor.isText || !investor.logo ? (
+                  <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-slate-300 hover:text-white text-center">
+                    {investor.name}
+                  </span>
+                ) : (
+                  <>
+                    <img 
+                      src={investor.logo} 
+                      alt={investor.name}
+                      className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain max-w-[100px] sm:max-w-[120px] md:max-w-[140px] opacity-90 hover:opacity-100 transition-opacity"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        const fallback = e.target.parentElement.querySelector('.logo-fallback');
+                        if (fallback) fallback.style.display = 'block';
+                      }}
+                    />
+                    <span className="logo-fallback text-sm sm:text-base md:text-lg font-bold text-slate-300 hover:text-white hidden text-center">
+                      {investor.name}
+                    </span>
+                  </>
+                )}
+              </motion.a>
             ))}
           </div>
         </div>
@@ -835,8 +865,8 @@ const Home = () => {
             ].map((section, sectionIndex) => (
               <motion.div
                 key={section.title}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: sectionIndex * 0.2, duration: 0.8 }}
                 className="relative group"
@@ -861,7 +891,7 @@ const Home = () => {
                           key={pointIndex}
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
+            viewport={{ once: true }}
                           transition={{ delay: sectionIndex * 0.2 + pointIndex * 0.1 + 0.3 }}
                           className="flex items-start gap-4 group/item"
                         >
@@ -882,8 +912,8 @@ const Home = () => {
                           </p>
                         </motion.div>
                       ))}
-                    </div>
-                  </div>
+              </div>
+              </div>
                   
                   <div className={`absolute bottom-4 right-4 w-24 h-24 rounded-full bg-gradient-to-br ${section.gradient} opacity-5 blur-2xl group-hover:opacity-15 transition-opacity`} />
                 </div>
@@ -1008,14 +1038,14 @@ const Home = () => {
                       </motion.div>
                     </a>
                   ) : (
-                    <Link to={brand.path}>
-                      <motion.div
-                        whileHover={{ scale: 1.05, y: -3 }}
+                  <Link to={brand.path}>
+                    <motion.div
+                      whileHover={{ scale: 1.05, y: -3 }}
                         className={`w-24 h-16 sm:w-28 sm:h-18 md:w-36 md:h-22 lg:w-40 lg:h-24 rounded-lg md:rounded-xl bg-gradient-to-br ${brand.color} flex items-center justify-center text-2xl sm:text-3xl md:text-4xl font-black text-white shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-white/30`}
-                      >
-                        {brand.title[0]}
-                      </motion.div>
-                    </Link>
+                    >
+                      {brand.title[0]}
+                    </motion.div>
+                  </Link>
                   )}
                 </div>
               ))}
@@ -1088,41 +1118,41 @@ const Home = () => {
                 {[
                   { 
                     step: '01', 
-                    title: 'Explore', 
+                  title: 'Explore', 
                     desc: 'Discover our universe of integrated systems. See how each platform solves real startup challenges.', 
-                    action: 'View Startups', 
-                    link: '/startups',
-                    gradient: 'from-purple-500 to-violet-500',
+                  action: 'View Startups', 
+                  link: '/startups',
+                  gradient: 'from-purple-500 to-violet-500',
                     icon: '🔍',
                     position: 'md:flex-row'
-                  },
-                  { 
+                },
+                { 
                     step: '02', 
-                    title: 'Connect', 
+                  title: 'Connect', 
                     desc: 'Join the community. Find co-founders, mentors, and partners who share your vision.', 
-                    action: 'Join Community', 
-                    link: '/biggbizz',
-                    gradient: 'from-pink-500 to-rose-500',
+                  action: 'Join Community', 
+                  link: '/biggbizz',
+                  gradient: 'from-pink-500 to-rose-500',
                     icon: '🤝',
                     position: 'md:flex-row-reverse'
-                  },
-                  { 
+                },
+                { 
                     step: '03', 
-                    title: 'Build', 
+                  title: 'Build', 
                     desc: 'Start building with tools that power global startups. From incorporation to scaling.', 
-                    action: 'Get Started', 
-                    link: '/contact',
-                    gradient: 'from-blue-500 to-cyan-500',
+                  action: 'Get Started', 
+                  link: '/contact',
+                  gradient: 'from-blue-500 to-cyan-500',
                     icon: '🚀',
                     position: 'md:flex-row'
-                  },
-                ].map((item, index) => (
-                  <motion.div
-                    key={item.step}
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={item.step}
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ delay: index * 0.3, duration: 0.8, type: "spring" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ delay: index * 0.3, duration: 0.8, type: "spring" }}
                     className={`flex flex-col ${item.position} items-center md:items-start gap-8 md:gap-12 relative`}
                   >
                     {/* Milestone Marker */}
@@ -1138,9 +1168,9 @@ const Home = () => {
                       </motion.div>
                       
                       {/* Pulse Ring */}
-                      <motion.div
+                        <motion.div
                         animate={{ scale: [1, 1.5, 1], opacity: [0.6, 0, 0.6] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
+                          transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
                         className={`absolute inset-0 rounded-full bg-gradient-to-br ${item.gradient} opacity-30 z-10`}
                       />
                       
@@ -1163,18 +1193,18 @@ const Home = () => {
                         
                         <div className="relative z-10">
                           <h3 className="text-4xl md:text-6xl font-black mb-4 group-hover:text-gradient transition-all duration-500">
-                            {item.title}
-                          </h3>
-                          
+                        {item.title}
+                      </h3>
+                      
                           <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed font-light">
-                            {item.desc}
-                          </p>
-                          
-                          <Link
-                            to={item.link}
+                        {item.desc}
+                      </p>
+                      
+                      <Link
+                        to={item.link}
                             className={`inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r ${item.gradient} rounded-xl font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl relative overflow-hidden group/btn`}
-                          >
-                            <span className="relative z-10">{item.action}</span>
+                      >
+                        <span className="relative z-10">{item.action}</span>
                             <motion.svg
                               className="w-5 h-5 relative z-10"
                               fill="none"
@@ -1185,16 +1215,16 @@ const Home = () => {
                             >
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </motion.svg>
-                            <motion.div
-                              className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-0 group-hover/btn:opacity-100 transition-opacity`}
-                              style={{ filter: 'brightness(1.2)' }}
-                            />
-                          </Link>
-                        </div>
-                      </div>
+                        <motion.div
+                          className={`absolute inset-0 bg-gradient-to-r ${item.gradient} opacity-0 group-hover/btn:opacity-100 transition-opacity`}
+                          style={{ filter: 'brightness(1.2)' }}
+                        />
+                      </Link>
+                    </div>
+                  </div>
                     </motion.div>
-                  </motion.div>
-                ))}
+                </motion.div>
+              ))}
               </div>
             </div>
           </div>
