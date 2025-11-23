@@ -4,9 +4,9 @@ import { useState, useEffect, useRef } from 'react'
 
 const brands = [
   {
-    path: '/biggdate',
-    url: 'https://www.biggdate.com',
-    title: 'Biggdate',
+    path: '/biggmate',
+    url: 'https://www.biggmate.com',
+    title: 'BiggMate',
     tagline: 'The spark',
     description: 'Co-foundership engine. Match by intent, values, and complementary skills. Start building on day one with aligned partners.',
     color: 'from-pink-500 to-rose-500',
@@ -31,13 +31,12 @@ const brands = [
     isExternal: true,
   },
   {
-    path: '/peopleos',
-    url: 'https://people-os-six.vercel.app',
-    title: 'PeopleOS',
+    path: '/biggwork',
+    title: 'BiggWork',
     tagline: 'The talent engine',
     description: 'Predictive hiring powered by StartupOS intelligence. Understands your startup\'s stage, team DNA, & culture—then determines who to hire.',
     color: 'from-purple-500 to-violet-500',
-    isExternal: true,
+    isExternal: false,
   },
   {
     path: '/startupos',
@@ -75,11 +74,19 @@ const brands = [
     isExternal: true,
   },
   {
-    path: '/relationos',
-    title: 'RelationOS',
+    path: '/biggdate',
+    title: 'Biggdate',
     tagline: 'Because builders are human',
     description: 'AI for real relationships. Dating and marriage support that respects intent, values, and long-term compatibility for founders.',
     color: 'from-pink-500 to-purple-500',
+    isExternal: false,
+  },
+  {
+    path: '/biggself',
+    title: 'BiggSelf',
+    tagline: 'Your legacy vault',
+    description: 'A Swiss-style home for memories, identity, and intangible assets. Preserve, prove, and pass on what matters most to you.',
+    color: 'from-slate-500 to-gray-500',
     isExternal: false,
   },
   {
@@ -91,16 +98,16 @@ const brands = [
     isExternal: false,
   },
   {
-    path: '/lifeos',
-    title: 'LifeOS',
-    tagline: 'Your legacy vault',
-    description: 'A Swiss-style home for memories, identity, and intangible assets. Preserve, prove, and pass on what matters most to you.',
-    color: 'from-slate-500 to-gray-500',
+    path: '/biggfam',
+    title: 'BiggFam',
+    tagline: 'Family OS',
+    description: 'Family operating system inspired by BiggFam.com—communication, rituals, wellbeing.',
+    color: 'from-emerald-500 to-teal-500',
     isExternal: false,
   },
   {
-    path: '/biggbizz',
-    title: 'Biggbizz',
+    path: '/biggventures',
+    title: 'BiggVentures',
     tagline: 'The connective tissue',
     description: 'The community that connects it all. Founders, operators, investors, mentors—programs, deals, and peer accountability networks.',
     color: 'from-purple-500 to-pink-500',
@@ -117,11 +124,11 @@ const investors = [
   { name: 'IIM-A', logo: 'https://www.iima.ac.in/sites/default/files/iima-logo.png', website: 'https://www.iima.ac.in' },
 ]
 const testimonials = [
-  { name: 'Sarah Chen', role: 'Founder, TechFlow', quote: 'Biggbizz transformed how we build. From finding co-founders to scaling globally—everything in one universe.' },
+  { name: 'Sarah Chen', role: 'Founder, TechFlow', quote: 'BiggVentures transformed how we build. From finding co-founders to scaling globally—everything in one universe.' },
   { name: 'Marcus Rodriguez', role: 'CEO, GrowthLabs', quote: 'The integrated approach is game-changing. We went from idea to Series A in 18 months.' },
   { name: 'Priya Patel', role: 'Co-founder, HealthTech AI', quote: 'Finally, a platform that understands founders are human. Business, health, relationships—all covered.' },
   { name: 'David Kim', role: 'Founder, CloudScale', quote: 'The automation tools saved us hundreds of hours. We can focus on building instead of paperwork.' },
-  { name: 'Emma Thompson', role: 'CEO, DataVault', quote: 'Found our perfect co-founder through Biggdate. The matching algorithm is incredible.' },
+  { name: 'Emma Thompson', role: 'CEO, DataVault', quote: 'Found our perfect co-founder through BiggMate. The matching algorithm is incredible.' },
   { name: 'James Wilson', role: 'Co-founder, FinTech Pro', quote: 'From UAE incorporation to global expansion—EasyFreezone made it seamless.' },
   { name: 'Lisa Zhang', role: 'Founder, AI Innovations', quote: 'The community support is unmatched. Found mentors, investors, and partners all in one place.' },
 ]
@@ -540,7 +547,7 @@ const Home = () => {
                 backgroundClip: "text",
               }}
             >
-              Biggbizz
+              BiggVentures
             </motion.h1>
           </motion.div>
           
@@ -701,7 +708,7 @@ const Home = () => {
                 </motion.button>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16 bg-gradient-to-t from-black/95 via-black/85 to-transparent">
-                <p className="text-white text-3xl md:text-5xl font-bold mb-3">Video: The Biggbizz Story</p>
+                <p className="text-white text-3xl md:text-5xl font-bold mb-3">Video: The BiggVentures Story</p>
                 <p className="text-white/90 text-lg md:text-2xl">Watch how we're building the operating system for the next generation of startups</p>
               </div>
             </motion.div>
@@ -1054,7 +1061,7 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 md:mb-6 text-gradient"
             >
-              Startups Using Biggbizz
+              Startups Using BiggVentures
             </motion.h2>
             <motion.p
               initial={{ opacity: 0 }}
@@ -1197,7 +1204,7 @@ const Home = () => {
                   title: 'Connect', 
                     desc: 'Join the community. Find co-founders, mentors, and partners who share your vision.', 
                   action: 'Join Community', 
-                  link: '/biggbizz',
+                  link: '/biggventures',
                   gradient: 'from-pink-500 to-rose-500',
                     icon: '🤝',
                     position: 'md:flex-row-reverse'
@@ -1383,7 +1390,7 @@ const Home = () => {
                 transition={{ delay: 0.6 }}
               >
                 <Link
-                  to="/biggbizz"
+                  to="/biggventures"
                   className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-bold text-base sm:text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 relative overflow-hidden group/btn"
                 >
                   <span className="relative z-10">Join Community →</span>
@@ -1403,4 +1410,3 @@ const Home = () => {
 }
 
 export default Home
-

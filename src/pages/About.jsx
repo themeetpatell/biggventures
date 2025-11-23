@@ -20,7 +20,7 @@ const About = () => {
   ]
 
   const testimonials = [
-    { name: 'Sarah Chen', role: 'Founder, TechFlow', quote: 'Biggbizz transformed how we build. From finding co-founders to scaling globally—everything in one universe.', avatar: '👩‍💼' },
+    { name: 'Sarah Chen', role: 'Founder, TechFlow', quote: 'BiggVentures transformed how we build. From finding co-founders to scaling globally—everything in one universe.', avatar: '👩‍💼' },
     { name: 'Marcus Rodriguez', role: 'CEO, GrowthLabs', quote: 'The integrated approach is game-changing. We went from idea to Series A in 18 months.', avatar: '👨‍💻' },
     { name: 'Priya Patel', role: 'Co-founder, HealthTech AI', quote: 'Finally, a platform that understands founders are human. Business, health, relationships—all covered.', avatar: '👩‍🔬' },
   ]
@@ -45,7 +45,7 @@ const About = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-6xl md:text-8xl font-black mb-8"
           >
-            <span className="text-gradient">About Biggbizz</span>
+            <span className="text-gradient">About BiggVentures</span>
           </motion.h1>
           
           <motion.p
@@ -109,7 +109,7 @@ const About = () => {
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-300 leading-relaxed mb-6"
             >
-              Biggbizz is a coordinated stack of AI-native systems designed to take entrepreneurs from "I want to build" to "we scaled globally." 
+              BiggVentures is a coordinated stack of AI-native systems designed to take entrepreneurs from "I want to build" to "we scaled globally." 
               We believe that building a startup shouldn't require reinventing the wheel at every stage. Every brand in our universe is a chapter; 
               together they create compounding momentum.
             </motion.p>
@@ -379,7 +379,7 @@ const About = () => {
           <div className="relative z-10">
             <h2 className="text-4xl font-bold mb-6 text-gradient">Ready to Build?</h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of founders who are building the future with Biggbizz
+              Join thousands of founders who are building the future with BiggVentures
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -403,4 +403,3 @@ const About = () => {
 }
 
 export default About
-

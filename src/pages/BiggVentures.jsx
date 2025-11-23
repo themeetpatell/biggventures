@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
-const Biggbizz = () => {
+const BiggVentures = () => {
   return (
     <div className="pt-16 min-h-screen">
       <motion.section
@@ -27,7 +27,7 @@ const Biggbizz = () => {
             transition={{ delay: 0.3 }}
             className="text-5xl md:text-7xl font-black mb-4"
           >
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Biggbizz</span>
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">BiggVentures</span>
           </motion.h1>
           
           <motion.p
@@ -124,5 +124,4 @@ const Biggbizz = () => {
   )
 }
 
-export default Biggbizz
-
+export default BiggVentures

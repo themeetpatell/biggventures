@@ -12,6 +12,14 @@ const EasyFreezone = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 via-cyan-900/30 to-blue-900/30" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex justify-start mb-6">
+            <Link
+              to="/startups"
+              className="inline-flex items-center px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:bg-white/10 transition text-sm font-semibold"
+            >
+              ← Back to Startups
+            </Link>
+          </div>
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -47,6 +55,22 @@ const EasyFreezone = () => {
           >
             UAE launch hub. Incorporate, get your trade license, bank, and compliance pack. From application to activation—fast, guided, and audit-ready.
           </motion.p>
+          
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="mt-8"
+          >
+            <a
+              href="https://www.easyfreezonesetup.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl font-semibold text-white hover:opacity-90 transition"
+            >
+              Visit Website →
+            </a>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -94,4 +118,3 @@ const EasyFreezone = () => {
 }
 
 export default EasyFreezone
-

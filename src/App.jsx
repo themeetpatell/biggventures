@@ -5,18 +5,19 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Startup from './pages/Startup'
-import Biggdate from './pages/Biggdate'
+import BiggMate from './pages/BiggMate'
 import EasyFreezone from './pages/EasyFreezone'
 import Finanshels from './pages/Finanshels'
-import PeopleOS from './pages/PeopleOS'
+import BiggWork from './pages/BiggWork'
 import StartupOS from './pages/StartupOS'
 import Zerohuman from './pages/Zerohuman'
 import ExpandOS from './pages/ExpandOS'
 import Mealverse from './pages/Mealverse'
-import RelationOS from './pages/RelationOS'
+import Biggdate from './pages/Biggdate'
 import HealthOS from './pages/HealthOS'
-import LifeOS from './pages/LifeOS'
-import Biggbizz from './pages/Biggbizz'
+import BiggSelf from './pages/BiggSelf'
+import BiggVentures from './pages/BiggVentures'
+import BiggFam from './pages/BiggFam'
 
 function App() {
   return (
@@ -27,18 +28,19 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/startups" element={<Startup />} />
-        <Route path="/biggdate" element={<Biggdate />} />
+        <Route path="/biggmate" element={<BiggMate />} />
         <Route path="/easyfreezone" element={<EasyFreezone />} />
         <Route path="/finanshels" element={<Finanshels />} />
-        <Route path="/peopleos" element={<PeopleOS />} />
+        <Route path="/biggwork" element={<BiggWork />} />
         <Route path="/startupos" element={<StartupOS />} />
         <Route path="/zerohuman" element={<Zerohuman />} />
         <Route path="/expandos" element={<ExpandOS />} />
         <Route path="/mealverse" element={<Mealverse />} />
-        <Route path="/relationos" element={<RelationOS />} />
+        <Route path="/biggdate" element={<Biggdate />} />
         <Route path="/healthos" element={<HealthOS />} />
-        <Route path="/lifeos" element={<LifeOS />} />
-        <Route path="/biggbizz" element={<Biggbizz />} />
+        <Route path="/biggself" element={<BiggSelf />} />
+        <Route path="/biggfam" element={<BiggFam />} />
+        <Route path="/biggventures" element={<BiggVentures />} />
       </Routes>
       <Footer />
     </div>
@@ -46,4 +48,3 @@ function App() {
 }
 
 export default App
-

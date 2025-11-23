@@ -1,12 +1,12 @@
-# Biggbizz
+# BiggVentures
 
 **The OS Universe for Startups**
 
-Biggbizz is a modern, cinematic web platform showcasing an integrated ecosystem of AI-native systems designed to support entrepreneurs from "I want to build" to "we scaled globally."
+BiggVentures is a modern, cinematic web platform showcasing an integrated ecosystem of AI-native systems designed to support entrepreneurs from "I want to build" to "we scaled globally."
 
 ## 🌟 Overview
 
-Biggbizz represents a coordinated stack of integrated systems that form a complete operating system for startups. Each brand in the universe solves specific challenges while working together to create compounding momentum for founders.
+BiggVentures represents a coordinated stack of integrated systems that form a complete operating system for startups. Each brand in the universe solves specific challenges while working together to create compounding momentum for founders.
 
 ## 🚀 Features
 
@@ -36,7 +36,7 @@ Biggbizz represents a coordinated stack of integrated systems that form a comple
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd biggbizz
+cd biggventures
 ```
 
 2. Install dependencies:
@@ -61,7 +61,7 @@ npm run dev
 ## 📁 Project Structure
 
 ```
-biggbizz/
+biggventures/
 ├── public/              # Static assets
 ├── src/
 │   ├── assets/          # Images, fonts, etc.
@@ -84,20 +84,21 @@ biggbizz/
 
 ## 🌐 Brands in the Universe
 
-The Biggbizz universe includes 12 integrated systems:
+The BiggVentures universe includes 12 integrated systems:
 
-1. **Biggdate** - Co-foundership engine
+1. **BiggMate** - Co-foundership engine
 2. **EasyFreezone** - UAE launch hub
 3. **Finanshels** - Financial backbone
-4. **PeopleOS** - Talent engine
+4. **BiggWork** - Talent engine
 5. **StartupOS** - Growth core
 6. **Zerohuman** - Distribution power
 7. **ExpandOS** - Expansion layer
 8. **Mealverse** - Team fuel supply
-9. **RelationOS** - Relationship support
+9. **Biggdate** - Relationship support
 10. **HealthOS** - Health and longevity
-11. **LifeOS** - Legacy vault
-12. **Biggbizz** - Community connector
+11. **BiggSelf** - Legacy vault
+12. **BiggFam** - Family OS
+13. **BiggVentures** - Community connector
 
 ## 🎨 Design Features
 
@@ -117,7 +118,7 @@ The Biggbizz universe includes 12 integrated systems:
 
 ## 🌍 Virtual Office
 
-Biggbizz operates as a virtual-first company headquartered in **Dubai, UAE (GMT+4)**, serving founders globally across 50+ countries with 24/7 support.
+BiggVentures operates as a virtual-first company headquartered in **Dubai, UAE (GMT+4)**, serving founders globally across 50+ countries with 24/7 support.
 
 ## 👥 Team
 
@@ -134,5 +135,4 @@ This is a private project. For inquiries, please contact the team through the co
 
 ---
 
-Built with ❤️ by the Biggbizz team
-
+Built with ❤️ by the BiggVentures team

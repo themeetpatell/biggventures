@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
-const Biggdate = () => {
+const BiggFam = () => {
   return (
     <div className="pt-16 min-h-screen">
       <motion.section
@@ -9,7 +9,7 @@ const Biggdate = () => {
         animate={{ opacity: 1 }}
         className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-900/30 via-purple-900/30 to-pink-900/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/30 via-teal-900/30 to-green-900/30" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-start mb-6">
@@ -24,9 +24,9 @@ const Biggdate = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring" }}
-            className="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-purple-500 mx-auto mb-6 flex items-center justify-center text-4xl font-black text-white"
+            className="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 mx-auto mb-6 flex items-center justify-center text-4xl font-black text-white"
           >
-            B
+            F
           </motion.div>
           
           <motion.h1
@@ -35,7 +35,7 @@ const Biggdate = () => {
             transition={{ delay: 0.3 }}
             className="text-5xl md:text-7xl font-black mb-4"
           >
-            <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Biggdate</span>
+            <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">BiggFam</span>
           </motion.h1>
           
           <motion.p
@@ -44,7 +44,7 @@ const Biggdate = () => {
             transition={{ delay: 0.4 }}
             className="text-2xl md:text-3xl font-bold mb-6 text-slate-300"
           >
-            Because builders are human
+            Build stronger families
           </motion.p>
           
           <motion.p
@@ -53,7 +53,7 @@ const Biggdate = () => {
             transition={{ delay: 0.5 }}
             className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto"
           >
-            AI for real relationships. Dating and marriage support that respects intent, values, and long-term compatibility.
+            Family operating system inspired by BiggFam.com—designed to improve communication, shared rituals, and long-term wellbeing for founders and their families.
           </motion.p>
           
           <motion.div
@@ -63,10 +63,10 @@ const Biggdate = () => {
             className="mt-8"
           >
             <a
-              href="https://www.biggdate.com"
+              href="https://biggfam.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl font-semibold text-white hover:opacity-90 transition"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl font-semibold text-white hover:opacity-90 transition"
             >
               Visit Website →
             </a>
@@ -81,19 +81,19 @@ const Biggdate = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gradient">Meaningful Connections</h2>
+            <h2 className="text-4xl font-bold mb-6 text-gradient">Family Systems</h2>
             <div className="space-y-6">
               <div className="glass-effect rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-3">💝 Intent-Based Matching</h3>
-                <p className="text-slate-400">Match by genuine intent and relationship goals</p>
+                <h3 className="text-xl font-bold mb-3">Shared Rituals</h3>
+                <p className="text-slate-400">Weekly check-ins, gratitude loops, and goal setting to keep everyone aligned.</p>
               </div>
               <div className="glass-effect rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-3">🎯 Values Alignment</h3>
-                <p className="text-slate-400">Connect with people who share your core values</p>
+                <h3 className="text-xl font-bold mb-3">Emotional Health</h3>
+                <p className="text-slate-400">Guided conversations and prompts that build trust and psychological safety.</p>
               </div>
               <div className="glass-effect rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-3">⏳ Long-Term Compatibility</h3>
-                <p className="text-slate-400">AI that understands what makes relationships last</p>
+                <h3 className="text-xl font-bold mb-3">Future Planning</h3>
+                <p className="text-slate-400">Tools to plan memories, milestones, and legacy projects together.</p>
               </div>
             </div>
           </motion.div>
@@ -104,21 +104,21 @@ const Biggdate = () => {
             viewport={{ once: true }}
             className="glass-effect rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold mb-6">Relationship Support</h3>
-            <div className="space-y-4">
-              <div className="p-4 bg-white/5 rounded-lg">
-                <div className="font-semibold mb-2">Dating Support</div>
-                <p className="text-slate-400 text-sm">Navigate the dating world with AI guidance</p>
-              </div>
-              <div className="p-4 bg-white/5 rounded-lg">
-                <div className="font-semibold mb-2">Marriage Preparation</div>
-                <p className="text-slate-400 text-sm">Build strong foundations for lasting partnerships</p>
-              </div>
-              <div className="p-4 bg-white/5 rounded-lg">
-                <div className="font-semibold mb-2">Compatibility Analysis</div>
-                <p className="text-slate-400 text-sm">Deep insights into relationship dynamics</p>
-              </div>
-            </div>
+            <h3 className="text-2xl font-bold mb-6">What You Get</h3>
+            <ul className="space-y-4 text-slate-300">
+              <li className="flex items-start gap-3">
+                <span className="text-emerald-400">✓</span>
+                <span>Templates for family meetings and weekly rhythms</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-emerald-400">✓</span>
+                <span>Coaching-style prompts to navigate tough topics</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-emerald-400">✓</span>
+                <span>Private space for shared memories and commitments</span>
+              </li>
+            </ul>
           </motion.div>
         </div>
 
@@ -140,4 +140,4 @@ const Biggdate = () => {
   )
 }
 
-export default Biggdate
+export default BiggFam

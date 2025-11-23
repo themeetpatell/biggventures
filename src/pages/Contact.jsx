@@ -35,29 +35,69 @@ const Contact = () => {
   }
 
   const contactMethods = [
-    { icon: '📧', title: 'Email', description: 'hello@biggbizz.com', link: 'mailto:hello@biggbizz.com', color: 'from-purple-500 to-pink-500' },
-    { icon: '💼', title: 'LinkedIn', description: 'Connect with us', link: '#', color: 'from-indigo-500 to-purple-500' },
-    { icon: '🐦', title: 'Twitter', description: 'Follow updates', link: '#', color: 'from-sky-500 to-blue-500' },
-    { icon: '📷', title: 'Instagram', description: 'See our journey', link: '#', color: 'from-pink-500 via-purple-500 to-orange-500' },
-    { icon: '▶️', title: 'YouTube', description: 'Watch tutorials', link: '#', color: 'from-red-500 to-pink-500' },
-    { icon: '👥', title: 'Facebook', description: 'Join community', link: '#', color: 'from-blue-600 to-blue-500' },
-    { icon: '🎵', title: 'TikTok', description: 'Follow trends', link: '#', color: 'from-black via-gray-800 to-gray-900' },
+    { 
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
+          <polyline points="3,7 12,13 21,7" />
+        </svg>
+      ),
+      title: 'Email',
+      description: 'aarivbizz@gmail.com',
+      link: 'mailto:aarivbizz@gmail.com',
+    },
+    { 
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-10 h-10" fill="currentColor">
+          <path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4.5v-7h2.3l.4-3h-2.7v-1.9c0-.9.3-1.5 1.6-1.5h1.2V4.4c-.6-.1-1.3-.2-2-.2-2 0-3.4 1.2-3.4 3.5V11H9v3h3.9v7H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/>
+        </svg>
+      ),
+      title: 'LinkedIn',
+      description: 'in/themeetpatel',
+      link: 'https://www.linkedin.com/in/themeetpatel',
+    },
+    { 
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-10 h-10" fill="currentColor">
+          <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2h11A2.5 2.5 0 0 1 20 4.5v15a.5.5 0 0 1-.8.4l-3.9-3.1-2.6 3.1a.5.5 0 0 1-.8 0l-2.6-3.1-3.9 3.1a.5.5 0 0 1-.8-.4v-15ZM9 9.2c0 1.9 1.5 3.4 3.4 3.4 1.9 0 3.4-1.5 3.4-3.4S14.3 5.8 12.4 5.8 9 7.3 9 9.2Zm-.6 4.9a5.1 5.1 0 0 0 6.4 0l3.7 2.9V4.5c0-.8-.6-1.5-1.4-1.5h-11C5.7 3 5 3.7 5 4.5V17l3.4-2.9Z"/>
+        </svg>
+      ),
+      title: 'Twitter / X',
+      description: '@themeetpatel',
+      link: 'https://twitter.com/the_meetpatel',
+    },
+    { 
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.4">
+          <rect x="4" y="4" width="16" height="16" rx="4" ry="4" />
+          <path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+          <circle cx="17" cy="7" r="1" fill="currentColor" />
+        </svg>
+      ),
+      title: 'Instagram',
+      description: '@themeetpatel',
+      link: 'https://instagram.com/the.meetpatell',
+    },
+    { 
+      icon: (
+        <svg viewBox="0 0 24 24" className="w-10 h-10" fill="currentColor">
+          <path d="M21 7.2c0-1.1-1.1-1.8-2-1.3l-11 6a1.5 1.5 0 0 0 0 2.6l11 6c.9.5 2-.1 2-1.2V7.2Z"/>
+          <path d="M3 5a2 2 0 0 1 2-2h2v18H5a2 2 0 0 1-2-2V5Z"/>
+        </svg>
+      ),
+      title: 'YouTube',
+      description: '@themeetpatel',
+      link: 'https://www.youtube.com/@themeetpatel',
+    }
   ]
 
-
-  const supportChannels = [
-    { title: 'General Inquiries', description: 'Questions about our platform', email: 'hello@biggbizz.com', icon: '💬' },
-    { title: 'Technical Support', description: 'Need help with a system?', email: 'support@biggbizz.com', icon: '🔧' },
-    { title: 'Partnerships', description: 'Let\'s collaborate', email: 'partners@biggbizz.com', icon: '🤝' },
-    { title: 'Press & Media', description: 'Media inquiries', email: 'press@biggbizz.com', icon: '📰' },
-  ]
 
   const faqs = [
-    { question: 'How do I get started with Biggbizz?', answer: 'Start by exploring our universe of systems. Each system is designed to work independently or together. Sign up for the systems that match your startup stage and needs.' },
-    { question: 'Do I need to use all systems?', answer: 'No! Each system works independently. Use what you need, when you need it. Many founders start with Biggdate or StartupOS and expand as they grow.' },
-    { question: 'What makes Biggbizz different?', answer: 'We\'re the only platform that covers the complete founder journey—from finding co-founders to scaling globally, plus health, relationships, and legacy. Everything is AI-native and designed to work together.' },
+    { question: 'How do I get started with BiggVentures?', answer: 'Start by exploring our universe of systems. Each system is designed to work independently or together. Sign up for the systems that match your startup stage and needs.' },
+    { question: 'Do I need to use all systems?', answer: 'No! Each system works independently. Use what you need, when you need it. Many founders start with BiggMate or StartupOS and expand as they grow.' },
+    { question: 'What makes BiggVentures different?', answer: 'We\'re the only platform that covers the complete founder journey—from finding co-founders to scaling globally, plus health, relationships, and legacy. Everything is AI-native and designed to work together.' },
     { question: 'Is there a free trial?', answer: 'Yes! Most of our systems offer free trials or free tiers. Check individual system pages for specific pricing and trial information.' },
-    { question: 'Can I integrate Biggbizz with other tools?', answer: 'Absolutely! Our systems are built with integration in mind. We offer APIs and webhooks for most systems, and we\'re constantly adding new integrations.' },
+    { question: 'Can I integrate BiggVentures with other tools?', answer: 'Absolutely! Our systems are built with integration in mind. We offer APIs and webhooks for most systems, and we\'re constantly adding new integrations.' },
     { question: 'What kind of support do you offer?', answer: 'We offer 24/7 AI support across all systems, plus human support during business hours. Premium plans include dedicated account managers and priority support.' },
   ]
 
@@ -126,36 +166,39 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-10"
           >
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl font-bold mb-8 text-gradient"
-            >
-              Connect With Us
-            </motion.h2>
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-4xl font-bold text-gradient"
+              >
+                Connect With Us
+              </motion.h2>
+              <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-slate-300">
+                Built by themeetpatel.com
+              </div>
+            </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-6 justify-items-center">
               {contactMethods.map((method, index) => (
                 <motion.a
                   key={index}
                   href={method.link}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className={`glass-effect rounded-2xl p-6 relative overflow-hidden group border-2 border-transparent hover:border-white/20 transition-all duration-300`}
+                  transition={{ delay: index * 0.08 }}
+                  whileHover={{ scale: 1.15, y: -4 }}
+                  aria-label={method.title}
+                  className="text-white/85 hover:text-white transition"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${method.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
-                  <div className={`absolute -inset-1 bg-gradient-to-br ${method.color} opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300 rounded-2xl`} />
-                  <div className="relative z-10">
-                    <div className="text-4xl mb-3">{method.icon}</div>
-                    <h3 className="text-lg font-bold mb-2 text-white">{method.title}</h3>
-                    <p className="text-sm text-slate-300 group-hover:text-white transition-colors">{method.description}</p>
-                  </div>
+                  {method.icon}
+                  <span className="sr-only">{method.title}</span>
                 </motion.a>
               ))}
             </div>
@@ -258,42 +301,6 @@ const Contact = () => {
             viewport={{ once: true }}
             className="text-5xl font-bold mb-12 text-center text-gradient"
           >
-            Support Channels
-          </motion.h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {supportChannels.map((channel, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="glass-effect rounded-2xl p-6 text-center"
-              >
-                <div className="text-5xl mb-4">{channel.icon}</div>
-                <h3 className="text-xl font-bold mb-2 text-gradient">{channel.title}</h3>
-                <p className="text-slate-400 text-sm mb-3">{channel.description}</p>
-                <a href={`mailto:${channel.email}`} className="text-purple-400 hover:text-purple-300 text-sm">
-                  {channel.email}
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl font-bold mb-12 text-center text-gradient"
-          >
             Virtual Office
           </motion.h2>
           <div className="max-w-4xl mx-auto">
@@ -314,7 +321,7 @@ const Contact = () => {
                   Virtual-First Universe
                 </h3>
                 <p className="text-xl md:text-2xl text-slate-300 mb-6 leading-relaxed">
-                  Biggbizz operates as a virtual-first company, connecting founders globally through our integrated platform.
+                  BiggVentures operates as a virtual-first company, connecting founders globally through our integrated platform.
                 </p>
                 <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
                   <div className="flex items-center gap-3">
@@ -407,7 +414,7 @@ const Contact = () => {
           <div className="relative z-10">
             <h2 className="text-4xl font-bold mb-6 text-gradient">Ready to Start?</h2>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of founders building the future with Biggbizz
+              Join thousands of founders building the future with BiggVentures
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -431,4 +438,3 @@ const Contact = () => {
 }
 
 export default Contact
-

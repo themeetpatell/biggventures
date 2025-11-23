@@ -12,6 +12,14 @@ const StartupOS = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-orange-900/30 via-red-900/30 to-orange-900/30" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex justify-start mb-6">
+            <Link
+              to="/startups"
+              className="inline-flex items-center px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:bg-white/10 transition text-sm font-semibold"
+            >
+              ← Back to Startups
+            </Link>
+          </div>
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -47,6 +55,22 @@ const StartupOS = () => {
           >
             AI Co-Builders + execution systems. Strategy engines, IMPACTS model, growth playbooks, revenue acceleration, customer success, and data intelligence.
           </motion.p>
+          
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="mt-8"
+          >
+            <a
+              href="https://www.startupos.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl font-semibold text-white hover:opacity-90 transition"
+            >
+              Visit Website →
+            </a>
+          </motion.div>
         </div>
       </motion.section>
 
@@ -121,4 +145,3 @@ const StartupOS = () => {
 }
 
 export default StartupOS
-

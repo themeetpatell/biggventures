@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
-const Biggdate = () => {
+const BiggMate = () => {
   return (
     <div className="pt-16 min-h-screen">
       <motion.section
@@ -9,7 +9,7 @@ const Biggdate = () => {
         animate={{ opacity: 1 }}
         className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-900/30 via-purple-900/30 to-pink-900/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-pink-900/30 via-rose-900/30 to-pink-900/30" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex justify-start mb-6">
@@ -20,11 +20,12 @@ const Biggdate = () => {
               ← Back to Startups
             </Link>
           </div>
+          
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring" }}
-            className="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-purple-500 mx-auto mb-6 flex items-center justify-center text-4xl font-black text-white"
+            className="w-24 h-24 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-500 mx-auto mb-6 flex items-center justify-center text-4xl font-black text-white"
           >
             B
           </motion.div>
@@ -35,7 +36,7 @@ const Biggdate = () => {
             transition={{ delay: 0.3 }}
             className="text-5xl md:text-7xl font-black mb-4"
           >
-            <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Biggdate</span>
+            <span className="bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">BiggMate</span>
           </motion.h1>
           
           <motion.p
@@ -44,7 +45,7 @@ const Biggdate = () => {
             transition={{ delay: 0.4 }}
             className="text-2xl md:text-3xl font-bold mb-6 text-slate-300"
           >
-            Because builders are human
+            The spark
           </motion.p>
           
           <motion.p
@@ -53,7 +54,7 @@ const Biggdate = () => {
             transition={{ delay: 0.5 }}
             className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto"
           >
-            AI for real relationships. Dating and marriage support that respects intent, values, and long-term compatibility.
+            Co-foundership engine. Match by intent, values, and complementary skills. Start building on day one with aligned partners and a shared startup room.
           </motion.p>
           
           <motion.div
@@ -63,10 +64,10 @@ const Biggdate = () => {
             className="mt-8"
           >
             <a
-              href="https://www.biggdate.com"
+              href="https://www.biggmate.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl font-semibold text-white hover:opacity-90 transition"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 rounded-xl font-semibold text-white hover:opacity-90 transition"
             >
               Visit Website →
             </a>
@@ -75,27 +76,30 @@ const Biggdate = () => {
       </motion.section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid md:grid-cols-2 gap-12 mb-20">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6 text-gradient">Meaningful Connections</h2>
-            <div className="space-y-6">
-              <div className="glass-effect rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-3">💝 Intent-Based Matching</h3>
-                <p className="text-slate-400">Match by genuine intent and relationship goals</p>
-              </div>
-              <div className="glass-effect rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-3">🎯 Values Alignment</h3>
-                <p className="text-slate-400">Connect with people who share your core values</p>
-              </div>
-              <div className="glass-effect rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-3">⏳ Long-Term Compatibility</h3>
-                <p className="text-slate-400">AI that understands what makes relationships last</p>
-              </div>
-            </div>
+            <h2 className="text-4xl font-bold mb-6 text-gradient">Find Your Co-Founder</h2>
+            <p className="text-slate-300 text-lg mb-4">
+              Building alone is hard. BiggMate connects you with co-founders who share your vision, complement your skills, and align with your values.
+            </p>
+            <ul className="space-y-3 text-slate-400">
+              <li className="flex items-start">
+                <span className="text-pink-400 mr-2">✓</span>
+                <span>AI-powered matching by intent, values, and skills</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-pink-400 mr-2">✓</span>
+                <span>Shared startup room from day one</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-pink-400 mr-2">✓</span>
+                <span>Aligned partners ready to build</span>
+              </li>
+            </ul>
           </motion.div>
           
           <motion.div
@@ -104,19 +108,30 @@ const Biggdate = () => {
             viewport={{ once: true }}
             className="glass-effect rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold mb-6">Relationship Support</h3>
-            <div className="space-y-4">
-              <div className="p-4 bg-white/5 rounded-lg">
-                <div className="font-semibold mb-2">Dating Support</div>
-                <p className="text-slate-400 text-sm">Navigate the dating world with AI guidance</p>
+            <div className="space-y-6">
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white font-bold text-xl">
+                  A
+                </div>
+                <div>
+                  <div className="h-4 bg-gradient-to-r from-pink-500 to-rose-500 rounded w-32 mb-2"></div>
+                  <div className="h-3 bg-slate-700 rounded w-24"></div>
+                </div>
               </div>
-              <div className="p-4 bg-white/5 rounded-lg">
-                <div className="font-semibold mb-2">Marriage Preparation</div>
-                <p className="text-slate-400 text-sm">Build strong foundations for lasting partnerships</p>
+              <div className="h-px bg-white/10"></div>
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-xl">
+                  B
+                </div>
+                <div>
+                  <div className="h-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded w-32 mb-2"></div>
+                  <div className="h-3 bg-slate-700 rounded w-24"></div>
+                </div>
               </div>
-              <div className="p-4 bg-white/5 rounded-lg">
-                <div className="font-semibold mb-2">Compatibility Analysis</div>
-                <p className="text-slate-400 text-sm">Deep insights into relationship dynamics</p>
+              <div className="mt-6 text-center">
+                <div className="inline-block px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-500 rounded-lg text-white font-semibold">
+                  92% Match
+                </div>
               </div>
             </div>
           </motion.div>
@@ -140,4 +155,4 @@ const Biggdate = () => {
   )
 }
 
-export default Biggdate
+export default BiggMate

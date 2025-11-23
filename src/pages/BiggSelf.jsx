@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 
-const LifeOS = () => {
+const BiggSelf = () => {
   return (
     <div className="pt-16 min-h-screen">
       <motion.section
@@ -12,13 +12,21 @@ const LifeOS = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/30 via-gray-900/30 to-slate-900/30" />
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex justify-start mb-6">
+            <Link
+              to="/startups"
+              className="inline-flex items-center px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-slate-200 hover:bg-white/10 transition text-sm font-semibold"
+            >
+              ← Back to Startups
+            </Link>
+          </div>
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring" }}
             className="w-24 h-24 rounded-2xl bg-gradient-to-br from-slate-500 to-gray-500 mx-auto mb-6 flex items-center justify-center text-4xl font-black text-white"
           >
-            L
+            B
           </motion.div>
           
           <motion.h1
@@ -27,7 +35,7 @@ const LifeOS = () => {
             transition={{ delay: 0.3 }}
             className="text-5xl md:text-7xl font-black mb-4"
           >
-            <span className="bg-gradient-to-r from-slate-400 to-gray-400 bg-clip-text text-transparent">LifeOS</span>
+            <span className="bg-gradient-to-r from-slate-400 to-gray-400 bg-clip-text text-transparent">BiggSelf</span>
           </motion.h1>
           
           <motion.p
@@ -125,5 +133,4 @@ const LifeOS = () => {
   )
 }
 
-export default LifeOS
-
+export default BiggSelf

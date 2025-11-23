@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 const startups = [
   {
-    path: '/biggdate',
-    url: 'https://www.biggdate.com',
-    title: 'Biggdate',
+    path: '/biggmate',
+    visitUrl: 'https://www.biggmate.com',
+    title: 'BiggMate',
     tagline: 'The spark',
     description: 'Co-foundership engine. Match by intent, values, and complementary skills. Start building on day one with aligned partners and a shared startup room.',
     color: 'from-pink-500 to-rose-500',
@@ -13,7 +13,7 @@ const startups = [
   },
   {
     path: '/easyfreezone',
-    url: 'https://www.easyfreezonesetup.com',
+    visitUrl: 'https://www.easyfreezonesetup.com',
     title: 'EasyFreezone',
     tagline: 'The gateway',
     description: 'UAE launch hub. Incorporate, get your trade license, bank, and compliance pack. From application to activation—fast, guided, and audit-ready.',
@@ -22,7 +22,7 @@ const startups = [
   },
   {
     path: '/finanshels',
-    url: 'https://www.finanshels.com',
+    visitUrl: 'https://www.finanshels.com',
     title: 'Finanshels',
     tagline: 'The financial backbone',
     description: 'Accounting, tax, compliance—automated and monitored. Close books, file on time, monitor cash and VAT, see true runway in real time.',
@@ -30,9 +30,9 @@ const startups = [
     features: ['Automated accounting', 'Tax compliance', 'Cash monitoring', 'VAT management'],
   },
   {
-    path: '/peopleos',
-    url: 'https://people-os-six.vercel.app',
-    title: 'PeopleOS',
+    path: '/biggwork',
+    visitUrl: 'https://biggwork.com',
+    title: 'BiggWork',
     tagline: 'The talent engine',
     description: 'Predictive hiring powered by StartupOS intelligence. Understands your startup\'s stage, team DNA, and culture—then determines exactly who you should hire. Scores candidates across six dimensions for perfect fit.',
     color: 'from-purple-500 to-violet-500',
@@ -40,7 +40,7 @@ const startups = [
   },
   {
     path: '/startupos',
-    url: 'https://www.startupos.in',
+    visitUrl: 'https://www.startupos.in',
     title: 'StartupOS',
     tagline: 'The growth core',
     description: 'AI Co-Builders + execution systems. Strategy engines, IMPACTS model, growth playbooks, revenue acceleration, customer success, and data intelligence.',
@@ -49,7 +49,7 @@ const startups = [
   },
   {
     path: '/zerohuman',
-    url: 'https://www.zerohuman.co',
+    visitUrl: 'https://www.zerohuman.co',
     title: 'Zerohuman',
     tagline: 'The distribution power',
     description: 'AI-driven audience growth. Creative generation, multichannel orchestration, and performance insights that compound reach.',
@@ -66,7 +66,7 @@ const startups = [
   },
   {
     path: '/mealverse',
-    url: 'https://mealverse.in',
+    visitUrl: 'https://mealverse.in',
     title: 'Mealverse',
     tagline: "The team's fuel supply",
     description: 'Healthy, homemade food at work. Predictive meal planning, nutrition dashboards, and seamless ops for offices.',
@@ -74,8 +74,9 @@ const startups = [
     features: ['Predictive meal planning', 'Nutrition dashboards', 'Seamless operations', 'Healthy meals'],
   },
   {
-    path: '/relationos',
-    title: 'RelationOS',
+    path: '/biggdate',
+    visitUrl: 'https://www.biggdate.com',
+    title: 'Biggdate',
     tagline: 'Because builders are human',
     description: 'AI for real relationships. Dating and marriage support that respects intent, values, and long-term compatibility.',
     color: 'from-pink-500 to-purple-500',
@@ -90,20 +91,21 @@ const startups = [
     features: ['Continuous monitoring', 'Early warnings', 'Personalized protocols', 'Longevity focus'],
   },
   {
-    path: '/lifeos',
-    title: 'LifeOS',
+    path: '/biggself',
+    title: 'BiggSelf',
     tagline: 'Your legacy vault',
     description: 'A Swiss-style home for memories, identity, and intangible assets. Preserve, prove, and pass on what matters.',
     color: 'from-slate-500 to-gray-500',
     features: ['Memory preservation', 'Identity protection', 'Intangible assets', 'Legacy transfer'],
   },
   {
-    path: '/biggbizz',
-    title: 'Biggbizz',
-    tagline: 'The connective tissue',
-    description: 'The community that connects it all. Founders, operators, investors, mentors—programs, deals, and peer accountability.',
-    color: 'from-purple-500 to-pink-500',
-    features: ['Peer networks', 'Programs', 'Exclusive deals', 'Accountability'],
+    path: '/biggfam',
+    visitUrl: 'https://biggfam.com',
+    title: 'BiggFam',
+    tagline: 'Family OS',
+    description: 'Family operating system for communication, rituals, and long-term wellbeing inspired by BiggFam.com.',
+    color: 'from-emerald-500 to-teal-500',
+    features: ['Family rituals', 'Wellbeing prompts', 'Legacy planning'],
   },
 ]
 
@@ -133,119 +135,63 @@ const Startup = () => {
             transition={{ delay: 0.4 }}
             className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto"
           >
-            Explore each brand in the Biggbizz Universe
+            Explore each brand in the BiggVentures Universe
           </motion.p>
         </div>
       </motion.section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="space-y-24">
-          {startups.map((startup, index) => (
-            <motion.div
+          {startups.map((startup) => (
+            <div
               key={startup.path}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
               className="glass-effect rounded-3xl p-8 md:p-12 hover:border-white/20 transition-all duration-300 cursor-pointer"
             >
-              {startup.url ? (
-                <a
-                  href={startup.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${startup.color} mb-6 flex items-center justify-center text-4xl font-black text-white`}>
-                        {startup.title[0]}
-                      </div>
-                      
-                      <h2 className="text-4xl md:text-5xl font-black mb-4">
-                        <span className={`bg-gradient-to-r ${startup.color} bg-clip-text text-transparent`}>
-                          {startup.title}
-                        </span>
-                      </h2>
-                      
-                      <p className="text-xl font-bold mb-4 text-slate-300">
-                        {startup.tagline}
-                      </p>
-                      
-                      <p className="text-lg text-slate-400 mb-6 leading-relaxed">
-                        {startup.description}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-3 mb-6">
-                        {startup.features.map((feature, idx) => (
-                          <span
-                            key={idx}
-                            className="px-4 py-2 bg-white/5 rounded-full text-sm text-slate-300 border border-white/10"
-                          >
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-                      
-                      <span className="inline-block px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-semibold hover:opacity-90 transition">
-                        Visit Website →
-                      </span>
+              <Link to={startup.path} className="block">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${startup.color} mb-6 flex items-center justify-center text-4xl font-black text-white`}>
+                      {startup.title[0]}
                     </div>
                     
-                    <div className={`h-64 md:h-80 rounded-2xl bg-gradient-to-br ${startup.color} opacity-20 flex items-center justify-center`}>
-                      <div className="text-6xl md:text-8xl font-black text-white/30">
-                        {startup.title[0]}
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              ) : (
-                <Link to={startup.path} className="block">
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${startup.color} mb-6 flex items-center justify-center text-4xl font-black text-white`}>
-                        {startup.title[0]}
-                      </div>
-                      
-                      <h2 className="text-4xl md:text-5xl font-black mb-4">
-                        <span className={`bg-gradient-to-r ${startup.color} bg-clip-text text-transparent`}>
-                          {startup.title}
-                        </span>
-                      </h2>
-                      
-                      <p className="text-xl font-bold mb-4 text-slate-300">
-                        {startup.tagline}
-                      </p>
-                      
-                      <p className="text-lg text-slate-400 mb-6 leading-relaxed">
-                        {startup.description}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-3 mb-6">
-                        {startup.features.map((feature, idx) => (
-                          <span
-                            key={idx}
-                            className="px-4 py-2 bg-white/5 rounded-full text-sm text-slate-300 border border-white/10"
-                          >
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-                      
-                      <span className="inline-block px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-semibold hover:opacity-90 transition">
-                        Learn More →
+                    <h2 className="text-4xl md:text-5xl font-black mb-4">
+                      <span className={`bg-gradient-to-r ${startup.color} bg-clip-text text-transparent`}>
+                        {startup.title}
                       </span>
+                    </h2>
+                    
+                    <p className="text-xl font-bold mb-4 text-slate-300">
+                      {startup.tagline}
+                    </p>
+                    
+                    <p className="text-lg text-slate-400 mb-6 leading-relaxed">
+                      {startup.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-3 mb-6">
+                      {startup.features.map((feature, idx) => (
+                        <span
+                          key={idx}
+                          className="px-4 py-2 bg-white/5 rounded-full text-sm text-slate-300 border border-white/10"
+                        >
+                          {feature}
+                        </span>
+                      ))}
                     </div>
                     
-                    <div className={`h-64 md:h-80 rounded-2xl bg-gradient-to-br ${startup.color} opacity-20 flex items-center justify-center`}>
-                      <div className="text-6xl md:text-8xl font-black text-white/30">
-                        {startup.title[0]}
-                      </div>
+                    <span className="inline-block px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-semibold hover:opacity-90 transition">
+                      Learn More →
+                    </span>
+                  </div>
+                  
+                  <div className={`h-64 md:h-80 rounded-2xl bg-gradient-to-br ${startup.color} opacity-20 flex items-center justify-center`}>
+                    <div className="text-6xl md:text-8xl font-black text-white/30">
+                      {startup.title[0]}
                     </div>
                   </div>
-                </Link>
-              )}
-            </motion.div>
+                </div>
+              </Link>
+            </div>
           ))}
         </div>
 
@@ -268,4 +214,3 @@ const Startup = () => {
 }
 
 export default Startup
-
