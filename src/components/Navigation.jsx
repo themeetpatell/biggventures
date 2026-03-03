@@ -25,14 +25,17 @@ const Navigation = () => {
           <div className="flex h-16 items-center justify-between">
             <Link
               to="/"
-              className="flex items-center"
+              className="flex items-center gap-3"
               onClick={() => setMobileOpen(false)}
             >
               <img
-                src="/biggventures-long.png"
+                src="/biggventures-logo.png"
                 alt="BiggVentures"
-                className="h-8 w-auto"
+                className="h-10 w-10 shrink-0"
               />
+              <span className="text-lg font-semibold tracking-[0.08em] text-white">
+                BiggVentures
+              </span>
             </Link>
 
             {/* Desktop nav */}

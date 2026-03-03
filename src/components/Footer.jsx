@@ -31,11 +31,16 @@ const Footer = () => {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           <div className="col-span-2 md:col-span-1">
-            <img
-              src="/biggventures-logo.png"
-              alt="BiggVentures"
-              className="mb-4 h-10 w-auto"
-            />
+            <div className="mb-4 flex items-center gap-3">
+              <img
+                src="/biggventures-logo.png"
+                alt="BiggVentures"
+                className="h-12 w-12 shrink-0"
+              />
+              <span className="text-lg font-semibold tracking-[0.08em] text-white">
+                BiggVentures
+              </span>
+            </div>
             <p className="text-sm leading-6 text-slate-500">
               Founder infrastructure universe. Connected systems to start, scale, and stay in the game.
             </p>
