@@ -6,8 +6,6 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Startup from './pages/Startup'
 import BiggMate from './pages/BiggMate'
-import EasyFreezone from './pages/EasyFreezone'
-import Finanshels from './pages/Finanshels'
 import BiggWork from './pages/BiggWork'
 import StartupOS from './pages/StartupOS'
 import Zerohuman from './pages/Zerohuman'
@@ -21,7 +19,7 @@ import BiggFam from './pages/BiggFam'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950">
+    <div className="min-h-screen bg-black">
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -29,8 +27,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/startups" element={<Startup />} />
         <Route path="/biggmate" element={<BiggMate />} />
-        <Route path="/easyfreezone" element={<EasyFreezone />} />
-        <Route path="/finanshels" element={<Finanshels />} />
         <Route path="/biggwork" element={<BiggWork />} />
         <Route path="/startupos" element={<StartupOS />} />
         <Route path="/zerohuman" element={<Zerohuman />} />

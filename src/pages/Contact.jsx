@@ -1,253 +1,221 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { useRef } from 'react'
+
+const contactMethods = [
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <polyline points="3,7 12,13 21,7" />
+      </svg>
+    ),
+    title: 'Email',
+    handle: 'aarivbizz@gmail.com',
+    link: 'mailto:aarivbizz@gmail.com',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    ),
+    title: 'LinkedIn',
+    handle: 'in/themeetpatel',
+    link: 'https://www.linkedin.com/in/themeetpatel',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+    title: 'X / Twitter',
+    handle: '@themeetpatel',
+    link: 'https://twitter.com/the_meetpatel',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.4">
+        <rect x="4" y="4" width="16" height="16" rx="4" />
+        <path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+        <circle cx="17" cy="7" r="1" fill="currentColor" />
+      </svg>
+    ),
+    title: 'Instagram',
+    handle: '@the.meetpatell',
+    link: 'https://instagram.com/the.meetpatell',
+  },
+  {
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+        <path d="M21 7.2c0-1.1-1.1-1.8-2-1.3l-11 6a1.5 1.5 0 0 0 0 2.6l11 6c.9.5 2-.1 2-1.2V7.2Z" />
+        <path d="M3 5a2 2 0 0 1 2-2h2v18H5a2 2 0 0 1-2-2V5Z" />
+      </svg>
+    ),
+    title: 'YouTube',
+    handle: '@themeetpatel',
+    link: 'https://www.youtube.com/@themeetpatel',
+  },
+]
+
+const faqs = [
+  {
+    question: 'How do I get started with BiggVentures?',
+    answer: "Start by exploring our portfolio of systems. Each product is designed to work independently or together. Reach out via the form or email and we'll route you to the right entry point.",
+  },
+  {
+    question: 'Do I need to use all systems?',
+    answer: 'No. Each system works independently. Most founders start with BiggMate or StartupOS and expand as they grow. Use what you need, when you need it.',
+  },
+  {
+    question: 'What makes BiggVentures different?',
+    answer: 'We cover the complete founder journey — from finding co-founders to scaling globally, plus health, relationships, and legacy. Everything is AI-native and designed to share context across systems.',
+  },
+  {
+    question: 'Where are you based?',
+    answer: 'BiggVentures is headquartered in Dubai, UAE, and operates as a virtual-first company with global reach.',
+  },
+  {
+    question: 'Can I invest or partner with BiggVentures?',
+    answer: 'Yes — reach out via email or LinkedIn. We are open to conversations with operators, angels, and ecosystem partners who understand the founder infrastructure space.',
+  },
+]
 
 const Contact = () => {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"]
-  })
-  
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  })
-
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
   const [activeFAQ, setActiveFAQ] = useState(null)
+  const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+    setSubmitted(true)
   }
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
+    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const contactMethods = [
-    { 
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.6">
-          <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
-          <polyline points="3,7 12,13 21,7" />
-        </svg>
-      ),
-      title: 'Email',
-      description: 'aarivbizz@gmail.com',
-      link: 'mailto:aarivbizz@gmail.com',
-    },
-    { 
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-10 h-10" fill="currentColor">
-          <path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4.5v-7h2.3l.4-3h-2.7v-1.9c0-.9.3-1.5 1.6-1.5h1.2V4.4c-.6-.1-1.3-.2-2-.2-2 0-3.4 1.2-3.4 3.5V11H9v3h3.9v7H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/>
-        </svg>
-      ),
-      title: 'LinkedIn',
-      description: 'in/themeetpatel',
-      link: 'https://www.linkedin.com/in/themeetpatel',
-    },
-    { 
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-10 h-10" fill="currentColor">
-          <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2h11A2.5 2.5 0 0 1 20 4.5v15a.5.5 0 0 1-.8.4l-3.9-3.1-2.6 3.1a.5.5 0 0 1-.8 0l-2.6-3.1-3.9 3.1a.5.5 0 0 1-.8-.4v-15ZM9 9.2c0 1.9 1.5 3.4 3.4 3.4 1.9 0 3.4-1.5 3.4-3.4S14.3 5.8 12.4 5.8 9 7.3 9 9.2Zm-.6 4.9a5.1 5.1 0 0 0 6.4 0l3.7 2.9V4.5c0-.8-.6-1.5-1.4-1.5h-11C5.7 3 5 3.7 5 4.5V17l3.4-2.9Z"/>
-        </svg>
-      ),
-      title: 'Twitter / X',
-      description: '@themeetpatel',
-      link: 'https://twitter.com/the_meetpatel',
-    },
-    { 
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.4">
-          <rect x="4" y="4" width="16" height="16" rx="4" ry="4" />
-          <path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
-          <circle cx="17" cy="7" r="1" fill="currentColor" />
-        </svg>
-      ),
-      title: 'Instagram',
-      description: '@themeetpatel',
-      link: 'https://instagram.com/the.meetpatell',
-    },
-    { 
-      icon: (
-        <svg viewBox="0 0 24 24" className="w-10 h-10" fill="currentColor">
-          <path d="M21 7.2c0-1.1-1.1-1.8-2-1.3l-11 6a1.5 1.5 0 0 0 0 2.6l11 6c.9.5 2-.1 2-1.2V7.2Z"/>
-          <path d="M3 5a2 2 0 0 1 2-2h2v18H5a2 2 0 0 1-2-2V5Z"/>
-        </svg>
-      ),
-      title: 'YouTube',
-      description: '@themeetpatel',
-      link: 'https://www.youtube.com/@themeetpatel',
-    }
-  ]
-
-
-  const faqs = [
-    { question: 'How do I get started with BiggVentures?', answer: 'Start by exploring our universe of systems. Each system is designed to work independently or together. Sign up for the systems that match your startup stage and needs.' },
-    { question: 'Do I need to use all systems?', answer: 'No! Each system works independently. Use what you need, when you need it. Many founders start with BiggMate or StartupOS and expand as they grow.' },
-    { question: 'What makes BiggVentures different?', answer: 'We\'re the only platform that covers the complete founder journey—from finding co-founders to scaling globally, plus health, relationships, and legacy. Everything is AI-native and designed to work together.' },
-    { question: 'Is there a free trial?', answer: 'Yes! Most of our systems offer free trials or free tiers. Check individual system pages for specific pricing and trial information.' },
-    { question: 'Can I integrate BiggVentures with other tools?', answer: 'Absolutely! Our systems are built with integration in mind. We offer APIs and webhooks for most systems, and we\'re constantly adding new integrations.' },
-    { question: 'What kind of support do you offer?', answer: 'We offer 24/7 AI support across all systems, plus human support during business hours. Premium plans include dedicated account managers and priority support.' },
-  ]
-
   return (
-    <div className="pt-16 min-h-screen overflow-hidden">
-      <motion.section
-        ref={ref}
-        style={{ y, opacity }}
-        className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
-      >
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/40 via-pink-900/40 to-blue-900/40 animate-pulse" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(168,85,247,0.4),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(251,113,133,0.4),transparent_50%)]" />
-        </div>
-        
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            initial={{ y: 30, opacity: 0, scale: 0.9 }}
-            animate={{ y: 0, opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-6xl md:text-8xl font-black mb-8"
-          >
-            <span className="text-gradient">Get in Touch</span>
-          </motion.h1>
-          
-          <motion.p
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-2xl md:text-3xl text-slate-300 max-w-3xl mx-auto mb-6"
-          >
-            Let's build the future together
-          </motion.p>
-          
-          <motion.p
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-lg text-slate-400 max-w-2xl mx-auto"
-          >
-            We're here to help you on your startup journey
-          </motion.p>
-        </div>
+    <div className="relative bg-black pt-16 text-white">
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-white/8">
+        <div className="absolute left-0 top-0 h-[600px] w-[700px] rounded-full bg-orange-500/[0.05] blur-[120px]" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 pb-20 pt-24 sm:px-6 lg:px-8 lg:pt-32">
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-slate-400 text-4xl"
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
           >
-            ↓
-          </motion.div>
-        </motion.div>
-      </motion.section>
-
-      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid md:grid-cols-2 gap-12 mb-20">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-10"
-          >
-            <div className="flex items-center justify-between flex-wrap gap-4">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-4xl font-bold text-gradient"
-              >
-                Connect With Us
-              </motion.h2>
-              <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-slate-300">
-                Built by themeetpatel.com
-              </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-orange-400">Get in touch</p>
+            <h1 className="mt-6 text-[4rem] font-black leading-[0.88] tracking-tighter text-white sm:text-[6rem] lg:text-[9rem] xl:text-[10rem]">
+              Let's talk.
+            </h1>
+            <div className="mt-8 flex flex-wrap items-center gap-8 text-sm text-slate-500">
+              <span>Dubai, UAE · GMT+4</span>
+              <span className="h-px w-10 bg-white/10" />
+              <span>Founder, operator, investor, or partner</span>
+              <span className="h-px w-10 bg-white/10" />
+              <span>We read every message</span>
             </div>
-            
-            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-6 justify-items-center">
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Reach section */}
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="grid gap-20 lg:grid-cols-2 lg:gap-28">
+
+          {/* Left: channels */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.7 }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-orange-400">Channels</p>
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-white lg:text-4xl">
+                Reach us anywhere.
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-400">
+                Built by{' '}
+                <a href="https://themeetpatel.com" target="_blank" rel="noopener noreferrer" className="text-slate-300 underline-offset-4 hover:text-orange-400 transition-colors hover:underline">
+                  Meet Patel
+                </a>
+                . Respond within 24–48 hours.
+              </p>
+            </motion.div>
+
+            <div className="mt-10 space-y-2">
               {contactMethods.map((method, index) => (
                 <motion.a
                   key={index}
                   href={method.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.08 }}
-                  whileHover={{ scale: 1.15, y: -4 }}
-                  aria-label={method.title}
-                  className="text-white/85 hover:text-white transition"
+                  transition={{ duration: 0.5, delay: index * 0.07 }}
+                  className="group flex items-center gap-5 border-b border-white/8 py-5 transition-all hover:border-orange-400/20"
                 >
-                  {method.icon}
-                  <span className="sr-only">{method.title}</span>
+                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-white/8 bg-white/[0.03] text-slate-500 transition-colors group-hover:border-orange-400/25 group-hover:text-orange-400">
+                    {method.icon}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600">{method.title}</div>
+                    <div className="mt-0.5 text-base font-medium text-slate-200 truncate">{method.handle}</div>
+                  </div>
+                  <span className="text-slate-700 transition-all group-hover:translate-x-1.5 group-hover:text-orange-400">→</span>
                 </motion.a>
               ))}
             </div>
-          </motion.div>
+          </div>
 
+          {/* Right: form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="glass-effect rounded-3xl p-8 md:p-10 relative overflow-hidden"
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl" />
-            <div className="relative z-10">
-              <h2 className="text-4xl font-bold mb-6 text-gradient">Send us a message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-slate-300">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-slate-100 transition"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-slate-300">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-slate-100 transition"
-                    required
-                  />
-                </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-orange-400">Message us</p>
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-white lg:text-4xl">
+              Send a message.
+            </h2>
 
+            {submitted ? (
+              <div className="mt-10 rounded-[24px] border border-orange-400/15 bg-orange-500/[0.04] px-8 py-12 text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-orange-500/10 text-2xl font-black text-orange-400">✓</div>
+                <p className="mt-5 text-xl font-black text-white">Message sent.</p>
+                <p className="mt-2 text-sm text-slate-400">We'll be in touch soon.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="mt-10 space-y-6">
+                <div className="grid gap-6 sm:grid-cols-2">
+                  {[
+                    { id: 'name', label: 'Name', type: 'text' },
+                    { id: 'email', label: 'Email', type: 'email' },
+                  ].map(({ id, label, type }) => (
+                    <div key={id}>
+                      <label htmlFor={id} className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600">
+                        {label}
+                      </label>
+                      <input
+                        type={type}
+                        id={id}
+                        name={id}
+                        value={formData[id]}
+                        onChange={handleChange}
+                        required
+                        className="w-full rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3.5 text-sm text-slate-100 placeholder-slate-700 transition-all focus:border-orange-400/35 focus:bg-white/[0.05] focus:outline-none"
+                      />
+                    </div>
+                  ))}
+                </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2 text-slate-300">
+                  <label htmlFor="subject" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600">
                     Subject
                   </label>
                   <input
@@ -256,13 +224,12 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-slate-100 transition"
                     required
+                    className="w-full rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3.5 text-sm text-slate-100 placeholder-slate-700 transition-all focus:border-orange-400/35 focus:bg-white/[0.05] focus:outline-none"
                   />
                 </div>
-                
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-slate-300">
+                  <label htmlFor="message" className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600">
                     Message
                   </label>
                   <textarea
@@ -270,169 +237,85 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows="5"
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-slate-100 resize-none transition"
+                    rows={6}
                     required
+                    className="w-full resize-none rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3.5 text-sm text-slate-100 placeholder-slate-700 transition-all focus:border-orange-400/35 focus:bg-white/[0.05] focus:outline-none"
                   />
                 </div>
-                
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-semibold hover:opacity-90 transition text-lg"
+                  whileHover={{ scale: 1.012 }}
+                  whileTap={{ scale: 0.988 }}
+                  className="w-full rounded-xl bg-gradient-to-r from-amber-400 via-orange-500 to-orange-600 px-6 py-4 text-sm font-bold text-white shadow-[0_8px_24px_rgba(249,115,22,0.2)] transition-shadow hover:shadow-[0_12px_36px_rgba(249,115,22,0.34)]"
                 >
-                  Send Message
+                  Send message →
                 </motion.button>
               </form>
-            </div>
+            )}
           </motion.div>
         </div>
+      </section>
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl font-bold mb-12 text-center text-gradient"
-          >
-            Virtual Office
-          </motion.h2>
-          <div className="max-w-4xl mx-auto">
+      {/* FAQ */}
+      <section className="border-t border-white/8">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <div className="grid gap-16 lg:grid-cols-[1fr_2fr] lg:gap-24">
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="glass-effect rounded-3xl p-8 md:p-12 relative overflow-hidden group border-2 border-white/10 hover:border-white/30 transition-all duration-500"
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.7 }}
             >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500" />
-              <div className="absolute -inset-1 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500 rounded-3xl" />
-              
-              <div className="relative z-10 text-center">
-                <div className="text-6xl md:text-7xl mb-6">🌐</div>
-                <h3 className="text-3xl md:text-4xl font-black mb-4 text-gradient">
-                  Virtual-First Universe
-                </h3>
-                <p className="text-xl md:text-2xl text-slate-300 mb-6 leading-relaxed">
-                  BiggVentures operates as a virtual-first company, connecting founders globally through our integrated platform.
-                </p>
-                <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-3xl shadow-lg">
-                      🏙️
-                    </div>
-                    <div className="text-left">
-                      <div className="text-lg font-bold text-white">Headquarters</div>
-                      <div className="text-slate-400">Dubai, UAE</div>
-                      <div className="text-sm text-slate-500">GMT+4</div>
-                    </div>
-                  </div>
-                  <div className="hidden md:block w-px h-16 bg-gradient-to-b from-transparent via-purple-500/50 to-transparent" />
-                  <div className="flex items-center gap-3">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-3xl shadow-lg">
-                      🌍
-                    </div>
-                    <div className="text-left">
-                      <div className="text-lg font-bold text-white">Global Reach</div>
-                      <div className="text-slate-400">50+ Countries</div>
-                      <div className="text-sm text-slate-500">24/7 Support</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="absolute bottom-4 right-4 w-24 h-24 rounded-full bg-purple-500/5 blur-2xl group-hover:bg-purple-500/15 transition-opacity" />
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-orange-400">FAQ</p>
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-white lg:text-4xl">
+                Common questions.
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-slate-500">
+                Can't find what you're looking for? Send us a message directly.
+              </p>
             </motion.div>
-          </div>
-        </motion.section>
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl font-bold mb-12 text-center text-gradient"
-          >
-            Frequently Asked Questions
-          </motion.h2>
-          <div className="max-w-4xl mx-auto space-y-4">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="glass-effect rounded-xl overflow-hidden"
-              >
-                <button
-                  onClick={() => setActiveFAQ(activeFAQ === index ? null : index)}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white/5 transition"
-                >
-                  <span className="text-lg font-semibold text-slate-200">{faq.question}</span>
-                  <motion.span
-                    animate={{ rotate: activeFAQ === index ? 180 : 0 }}
-                    className="text-2xl text-purple-400"
-                  >
-                    ↓
-                  </motion.span>
-                </button>
+            <div className="space-y-2">
+              {faqs.map((faq, index) => (
                 <motion.div
-                  initial={false}
-                  animate={{ height: activeFAQ === index ? 'auto' : 0, opacity: activeFAQ === index ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="overflow-hidden"
+                  key={index}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.06 }}
+                  className="overflow-hidden border-b border-white/8"
                 >
-                  <div className="px-6 pb-4 text-slate-300">
-                    {faq.answer}
-                  </div>
+                  <button
+                    onClick={() => setActiveFAQ(activeFAQ === index ? null : index)}
+                    className="flex w-full items-center justify-between py-5 text-left transition-colors"
+                  >
+                    <span className="pr-8 text-base font-semibold text-slate-200 leading-relaxed">{faq.question}</span>
+                    <motion.span
+                      animate={{ rotate: activeFAQ === index ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex-shrink-0 text-orange-400"
+                    >
+                      ↓
+                    </motion.span>
+                  </button>
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: activeFAQ === index ? 'auto' : 0,
+                      opacity: activeFAQ === index ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.25 }}
+                    className="overflow-hidden"
+                  >
+                    <p className="pb-6 text-sm leading-7 text-slate-400">{faq.answer}</p>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        <motion.section
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="glass-effect rounded-3xl p-12 text-center relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-blue-500/20" />
-          <div className="relative z-10">
-            <h2 className="text-4xl font-bold mb-6 text-gradient">Ready to Start?</h2>
-            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of founders building the future with BiggVentures
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/"
-                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl font-semibold hover:opacity-90 transition text-lg"
-              >
-                Explore Universe
-              </Link>
-              <Link
-                to="/about"
-                className="px-8 py-4 glass-effect rounded-xl hover:bg-white/10 transition text-lg font-semibold"
-              >
-                Learn More
-              </Link>
+              ))}
             </div>
           </div>
-        </motion.section>
+        </div>
       </section>
+
     </div>
   )
 }
