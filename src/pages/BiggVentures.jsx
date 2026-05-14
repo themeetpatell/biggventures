@@ -6,7 +6,7 @@ const BiggVentures = () => (
     tagline="The connective tissue"
     category="Growth"
     description="The community and capital layer that connects founders across the entire BiggVentures universe. Peer networks, structured programs, exclusive operator deals, and accountability systems for founders who are serious about the long game."
-    accent="from-amber-400 via-orange-500 to-orange-600"
+    accent="from-violet-400 via-violet-500 to-violet-600"
     features={['Peer networks', 'Founder programs', 'Operator deals', 'Accountability systems']}
     points={[
       {

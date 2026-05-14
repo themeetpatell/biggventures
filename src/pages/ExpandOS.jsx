@@ -2,11 +2,12 @@ import ProductPage from '../components/ProductPage'
 
 const ExpandOS = () => (
   <ProductPage
-    title="ExpandOS"
+    title="Velora"
     tagline="The expansion layer"
     category="Growth"
-    description="Capital, M&A, and strategic growth workflows built for founders who are ready to scale beyond their first market. Fundraising command, cap table management, investor network access, and acquisition infrastructure."
-    accent="from-amber-400 via-yellow-500 to-orange-400"
+    visitUrl="https://velora-sooty-seven.vercel.app/"
+    description="Capital, M&A, and strategic growth workflows built for founders ready to scale beyond their first market. Fundraising command, cap table management, investor network access, and acquisition infrastructure — engineered for founder speed."
+    accent="from-violet-400 via-fuchsia-500 to-purple-500"
     features={['Fundraising command', 'Cap table management', 'Investor network', 'M&A workflows']}
     points={[
       {
@@ -23,7 +24,7 @@ const ExpandOS = () => (
       },
       {
         title: 'M&A when you are ready',
-        description: 'Acquisition workflows for both sides — whether acquiring or being acquired, ExpandOS prepares you for the full process.',
+        description: 'Acquisition workflows for both sides — whether acquiring or being acquired, Velora prepares you for the full process.',
       },
     ]}
   />

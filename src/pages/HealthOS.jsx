@@ -2,16 +2,17 @@ import ProductPage from '../components/ProductPage'
 
 const HealthOS = () => (
   <ProductPage
-    title="HealthOS"
+    title="GetTulsi"
     tagline="Stay in the game"
     category="Founder Life"
+    visitUrl="https://gettulsi.com"
     description="Preventive health and longevity infrastructure for founders playing the long game. Continuous monitoring, early warning systems, and personalized protocols that keep you performing at your best for years, not quarters."
-    accent="from-red-400 via-orange-500 to-amber-400"
+    accent="from-emerald-400 via-teal-500 to-green-500"
     features={['Continuous monitoring', 'Early warnings', 'Personalized protocols', 'Longevity focus']}
     points={[
       {
         title: 'Prevention, not reaction',
-        description: 'HealthOS monitors health markers continuously and surfaces patterns before they become problems — not after you have already burned out.',
+        description: 'GetTulsi monitors health markers continuously and surfaces patterns before they become problems — not after you have already burned out.',
       },
       {
         title: 'Early warning systems calibrated for builders',
@@ -23,7 +24,7 @@ const HealthOS = () => (
       },
       {
         title: 'The decade, not the quarter',
-        description: 'Most founders optimize for next month. HealthOS is built for the decade. Stay sharp, stay capable, stay in the game longer.',
+        description: 'Most founders optimize for next month. GetTulsi is built for the decade. Stay sharp, stay capable, stay in the game longer.',
       },
     ]}
   />

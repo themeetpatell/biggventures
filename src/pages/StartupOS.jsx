@@ -6,7 +6,7 @@ const StartupOS = () => (
     tagline="The growth core"
     category="Foundation"
     description="AI Co-Builders combined with execution systems built for founders running multiple priorities at once. Strategy engines, the IMPACTS model, growth playbooks, revenue acceleration, and data intelligence — all in one operating layer."
-    accent="from-yellow-400 via-orange-500 to-orange-600"
+    accent="from-yellow-400 via-violet-500 to-orange-600"
     visitUrl="https://www.startupos.in"
     features={['AI Co-Builders', 'IMPACTS model', 'Growth playbooks', 'Revenue acceleration']}
     points={[

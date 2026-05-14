@@ -1,6 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
+import CinematicBackground from './components/CinematicBackground'
+import CursorSpotlight from './components/CursorSpotlight'
+import ScrollProgress from './components/ScrollProgress'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -19,7 +22,10 @@ import BiggFam from './pages/BiggFam'
 
 function App() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="relative min-h-screen bg-black">
+      <CinematicBackground />
+      <CursorSpotlight />
+      <ScrollProgress />
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />

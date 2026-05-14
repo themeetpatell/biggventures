@@ -6,7 +6,7 @@ const BiggMate = () => (
     tagline="The spark"
     category="Foundation"
     description="Co-foundership engine built for founders who know that the wrong co-founder costs more than a year. Match by intent, complementary skills, and aligned values — then build from day one inside a shared startup room."
-    accent="from-amber-400 via-orange-500 to-rose-500"
+    accent="from-amber-400 via-violet-500 to-rose-500"
     visitUrl="https://www.biggmate.com"
     features={['AI-powered matching', 'Intent alignment', 'Shared startup room', 'Values scoring']}
     points={[

@@ -13,51 +13,78 @@ const footerLinks = {
   ],
   Growth: [
     { to: '/zerohuman', label: 'Zerohuman' },
-    { to: '/expandos', label: 'ExpandOS' },
+    { to: '/expandos', label: 'Velora' },
     { to: '/biggventures', label: 'BiggVentures' },
   ],
   'Founder Life': [
     { to: '/mealverse', label: 'Mealverse' },
-    { to: '/healthos', label: 'HealthOS' },
+    { to: '/healthos', label: 'GetTulsi' },
     { to: '/biggdate', label: 'Biggdate' },
     { to: '/biggself', label: 'BiggSelf' },
     { to: '/biggfam', label: 'BiggFam' },
   ],
 }
 
+const socials = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/themeetpatel' },
+  { label: 'X', href: 'https://twitter.com/the_meetpatel' },
+  { label: 'Instagram', href: 'https://instagram.com/the.meetpatell' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@themeetpatel' },
+]
+
 const Footer = () => {
   return (
-    <footer className="border-t border-white/8 bg-black">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-black">
+      {/* Top accent line */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/60 to-transparent" />
+      <div className="absolute left-1/2 top-0 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-violet-500/[0.06] blur-[140px]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           <div className="col-span-2 md:col-span-1">
-            <div className="mb-4 flex items-center gap-3">
-              <img
-                src="/biggventures-logo.png"
-                alt="BiggVentures"
-                className="h-12 w-12 shrink-0"
-              />
-              <span className="text-lg font-semibold tracking-[0.08em] text-white">
-                BiggVentures
+            <div className="group mb-5 flex items-center gap-3">
+              <span className="relative">
+                <span className="absolute inset-0 -m-1 rounded-full bg-violet-500/30 opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-100" />
+                <img
+                  src="/biggventures-logo.png"
+                  alt="BiggVentures"
+                  className="relative h-12 w-12 shrink-0"
+                />
               </span>
+              <span className="text-lg font-bold tracking-[0.08em] text-white">BiggVentures</span>
             </div>
-            <p className="text-sm leading-6 text-slate-500">
+            <p className="text-sm leading-7 text-slate-400">
               Founder infrastructure universe. Connected systems to start, scale, and stay in the game.
             </p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400 transition-all hover:border-violet-400/40 hover:bg-violet-500/[0.06] hover:text-violet-300"
+                >
+                  {s.label}
+                </a>
+              ))}
+            </div>
           </div>
 
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              <h4 className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-violet-300/90">
                 {category}
               </h4>
               <ul className="space-y-3">
                 {links.map(({ to, label }) => (
-                  <li key={to}>
+                  <li key={`${category}-${label}`}>
                     <Link
                       to={to}
-                      className="text-sm text-slate-500 transition-colors hover:text-orange-400"
+                      className="group relative inline-flex items-center text-sm text-slate-400 transition-colors hover:text-white"
                     >
+                      <span className="mr-0 h-px w-0 bg-violet-400 transition-all duration-300 group-hover:mr-2 group-hover:w-4" />
                       {label}
                     </Link>
                   </li>
@@ -67,9 +94,9 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/8 pt-8 sm:flex-row">
-          <p className="text-xs text-slate-600">
-            © 2025 BiggVentures Universe. All rights reserved.
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-600">
+            © 2026 BiggVentures Universe · All rights reserved.
           </p>
           <div className="flex gap-6">
             {[
@@ -80,7 +107,7 @@ const Footer = () => {
               <Link
                 key={label}
                 to={to}
-                className="text-xs text-slate-600 transition-colors hover:text-orange-400"
+                className="text-xs font-bold uppercase tracking-[0.18em] text-slate-600 transition-colors hover:text-violet-300"
               >
                 {label}
               </Link>
