@@ -14,7 +14,6 @@ import StartupOS from './pages/StartupOS'
 import Zerohuman from './pages/Zerohuman'
 import ExpandOS from './pages/ExpandOS'
 import Mealverse from './pages/Mealverse'
-import Biggdate from './pages/Biggdate'
 import HealthOS from './pages/HealthOS'
 import BiggSelf from './pages/BiggSelf'
 import BiggVentures from './pages/BiggVentures'
@@ -38,7 +37,6 @@ function App() {
         <Route path="/zerohuman" element={<Zerohuman />} />
         <Route path="/expandos" element={<ExpandOS />} />
         <Route path="/mealverse" element={<Mealverse />} />
-        <Route path="/biggdate" element={<Biggdate />} />
         <Route path="/healthos" element={<HealthOS />} />
         <Route path="/biggself" element={<BiggSelf />} />
         <Route path="/biggfam" element={<BiggFam />} />
