@@ -25,13 +25,6 @@ const footerLinks = {
   ],
 }
 
-const socials = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/themeetpatel' },
-  { label: 'X', href: 'https://twitter.com/the_meetpatel' },
-  { label: 'Instagram', href: 'https://instagram.com/the.meetpatell' },
-  { label: 'YouTube', href: 'https://www.youtube.com/@themeetpatel' },
-]
-
 const Footer = () => {
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-black">
@@ -56,20 +49,6 @@ const Footer = () => {
             <p className="text-sm leading-7 text-slate-400">
               Founder infrastructure universe. Connected systems to start, scale, and stay in the game.
             </p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400 transition-all hover:border-violet-400/40 hover:bg-violet-500/[0.06] hover:text-violet-300"
-                >
-                  {s.label}
-                </a>
-              ))}
-            </div>
           </div>
 
           {Object.entries(footerLinks).map(([category, links]) => (

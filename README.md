@@ -88,7 +88,7 @@ The BiggVentures universe includes 12 integrated systems:
 
 1. **BiggMate** - Co-foundership engine
 2. **EasyFreezone** - UAE launch hub
-3. **Finanshels** - Financial backbone
+3. **Stealth Startup** - Financial backbone
 4. **BiggWork** - Talent engine
 5. **StartupOS** - Growth core
 6. **Zerohuman** - Distribution power
@@ -122,7 +122,7 @@ BiggVentures operates as a virtual-first company headquartered in **Dubai, UAE (
 
 ## 👥 Team
 
-- **Meet Patel** - CEO/Founder
+- **Aariv Patel** - CEO/Founder
 - **Drashty Soni** - CTO/Co-founder
 
 ## 📝 License
