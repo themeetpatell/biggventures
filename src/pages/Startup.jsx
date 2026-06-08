@@ -67,16 +67,6 @@ const startups = [
     features: ['Predictive meal planning', 'Nutrition dashboards', 'Seamless operations', 'Healthy meals'],
   },
   {
-    path: '/biggdate',
-    visitUrl: 'https://www.biggdate.com',
-    title: 'Biggdate',
-    tagline: 'Because builders are human',
-    category: 'Founder Life',
-    description: 'AI for real relationships. Dating and marriage support that respects intent, values, and long-term compatibility.',
-    accent: 'from-rose-400 to-pink-500',
-    features: ['Intent-based matching', 'Values alignment', 'Long-term compatibility', 'Relationship support'],
-  },
-  {
     path: '/healthos',
     visitUrl: 'https://gettulsi.com',
     title: 'GetTulsi',

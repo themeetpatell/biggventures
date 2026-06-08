@@ -94,7 +94,6 @@ The BiggVentures universe includes 12 integrated systems:
 6. **Zerohuman** - Distribution power
 7. **ExpandOS** - Expansion layer
 8. **Mealverse** - Team fuel supply
-9. **Biggdate** - Relationship support
 10. **HealthOS** - Health and longevity
 11. **BiggSelf** - Legacy vault
 12. **BiggFam** - Family OS

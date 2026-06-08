@@ -19,7 +19,6 @@ const footerLinks = {
   'Founder Life': [
     { to: '/mealverse', label: 'Mealverse' },
     { to: '/healthos', label: 'GetTulsi' },
-    { to: '/biggdate', label: 'Biggdate' },
     { to: '/biggself', label: 'BiggSelf' },
     { to: '/biggfam', label: 'BiggFam' },
   ],

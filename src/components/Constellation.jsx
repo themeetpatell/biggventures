@@ -30,7 +30,6 @@ const RINGS = [
     nodes: [
       { name: 'Mealverse', accent: '#84cc16' },
       { name: 'GetTulsi', accent: '#34d399' },
-      { name: 'Biggdate', accent: '#f472b6' },
       { name: 'BiggSelf', accent: '#cbd5e1' },
       { name: 'BiggFam', accent: '#fbbf24' },
     ],

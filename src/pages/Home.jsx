@@ -9,7 +9,7 @@ import CurtainDivider from '../components/CurtainDivider'
 
 const tickerItems = [
   'BiggMate', 'StartupOS', 'BiggWork', 'Zerohuman', 'Velora',
-  'Mealverse', 'GetTulsi', 'Biggdate', 'BiggSelf', 'BiggFam', 'BiggVentures',
+  'Mealverse', 'GetTulsi', 'BiggSelf', 'BiggFam', 'BiggVentures',
 ]
 
 const stats = [
@@ -41,7 +41,7 @@ const lanes = [
     title: 'Founder Life',
     headline: 'Humans first. Always.',
     description: 'Health, food, relationships, identity, and family — because the long game requires more than hustle and the company you build is downstream of the life you live.',
-    items: ['Mealverse', 'GetTulsi', 'Biggdate', 'BiggSelf', 'BiggFam'],
+    items: ['Mealverse', 'GetTulsi', 'BiggSelf', 'BiggFam'],
     accent: 'from-rose-400 via-red-500 to-amber-500',
   },
 ]
@@ -54,7 +54,6 @@ const brands = [
   { title: 'Velora', path: '/expandos', url: 'https://velora-sooty-seven.vercel.app/', isExternal: true, description: 'Capital, fundraising, and expansion workflows engineered for founder speed.', accent: 'from-violet-400 to-fuchsia-500', glow: '167, 139, 250' },
   { title: 'Mealverse', path: '/mealverse', url: 'https://mealverse.in', isExternal: true, description: 'Healthy food infrastructure so teams keep energy where it matters.', accent: 'from-lime-400 to-green-500', glow: '132, 204, 22' },
   { title: 'GetTulsi', path: '/healthos', url: 'https://gettulsi.com', isExternal: true, description: 'Preventive health and longevity infrastructure for founders playing the long game.', accent: 'from-emerald-400 to-teal-500', glow: '52, 211, 153' },
-  { title: 'Biggdate', path: '/biggdate', url: 'https://www.biggdate.com', isExternal: true, description: 'AI for real relationships. Intent-based matching for long-term compatibility.', accent: 'from-rose-400 to-pink-500', glow: '244, 114, 182' },
   { title: 'BiggSelf', path: '/biggself', isExternal: false, description: 'Swiss-style vault for memories, identity, and intangible assets.', accent: 'from-slate-400 to-zinc-500', glow: '203, 213, 225' },
   { title: 'BiggFam', path: '/biggfam', isExternal: false, description: 'A family operating system for the life behind the company.', accent: 'from-amber-300 to-orange-400', glow: '251, 191, 36' },
 ]
