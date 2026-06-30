@@ -7,6 +7,15 @@ import CurtainDivider from '../components/CurtainDivider'
 
 const startups = [
   {
+    visitUrl: 'https://usedan.com',
+    title: 'useDan',
+    tagline: 'The intelligence layer',
+    category: 'Foundation',
+    description: 'useDan by Company8 — ask your business anything in plain language, see what changed, and turn insights into action. AI-native business intelligence for founders, operators, and finance teams who refuse to wait on reports.',
+    accent: 'from-sky-400 to-violet-500',
+    features: ['Natural-language queries', 'Change detection', 'Insights to action', 'Connected data'],
+  },
+  {
     path: '/biggmate',
     visitUrl: 'https://www.biggmate.com',
     title: 'BiggMate',
@@ -223,7 +232,7 @@ const Startup = () => {
               <ParallaxHero />
             </div>
             <p className="mx-auto mt-10 max-w-3xl text-lg leading-8 text-slate-400 sm:text-xl">
-              Ten interconnected products across three builder verticals. Each one solves a specific founder problem. Together, they form a complete operating system.
+              Eleven interconnected products across three builder verticals. Each one solves a specific founder problem. Together, they form a complete operating system.
             </p>
           </motion.div>
         </div>

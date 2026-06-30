@@ -6,6 +6,7 @@ import MagneticCard from '../components/MagneticCard'
 import SectionReveal from '../components/SectionReveal'
 import SplitText from '../components/SplitText'
 import CurtainDivider from '../components/CurtainDivider'
+import LaunchSpotlight from '../components/LaunchSpotlight'
 
 const tickerItems = [
   'BiggMate', 'StartupOS', 'BiggWork', 'Zerohuman', 'Velora',
@@ -330,6 +331,8 @@ const Home = () => {
           </motion.div>
         </motion.div>
       </section>
+
+      <LaunchSpotlight />
 
       <div className="relative overflow-hidden border-b border-white/8 bg-black py-5">
         <div className="flex animate-marquee whitespace-nowrap">

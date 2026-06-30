@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
+import LaunchBanner from './components/LaunchBanner'
 import Footer from './components/Footer'
 import CinematicBackground from './components/CinematicBackground'
 import CursorSpotlight from './components/CursorSpotlight'
@@ -21,7 +22,11 @@ import BiggFam from './pages/BiggFam'
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-black">
+    <div
+      className="relative min-h-screen bg-black"
+      style={{ paddingTop: 'var(--launch-h, 0px)' }}
+    >
+      <LaunchBanner />
       <CinematicBackground />
       <CursorSpotlight />
       <ScrollProgress />

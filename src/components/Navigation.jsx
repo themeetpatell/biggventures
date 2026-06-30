@@ -27,7 +27,8 @@ const Navigation = () => {
         initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className={`fixed left-0 right-0 top-0 z-50 border-b backdrop-blur-2xl transition-all duration-300 ${
+        style={{ top: 'var(--launch-h, 0px)' }}
+        className={`fixed left-0 right-0 z-50 border-b backdrop-blur-2xl transition-all duration-300 ${
           scrolled
             ? 'border-white/10 bg-black/75 shadow-[0_8px_30px_rgba(0,0,0,0.4)]'
             : 'border-transparent bg-black/40'
@@ -113,7 +114,8 @@ const Navigation = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="fixed inset-x-0 top-16 z-40 border-b border-white/8 bg-black/96 backdrop-blur-xl md:hidden"
+            style={{ top: 'calc(var(--launch-h, 0px) + 4rem)' }}
+            className="fixed inset-x-0 z-40 border-b border-white/8 bg-black/96 backdrop-blur-xl md:hidden"
           >
             <div className="mx-auto max-w-7xl space-y-1 px-4 py-4">
               {navItems.map((item) => (

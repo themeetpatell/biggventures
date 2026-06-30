@@ -2,6 +2,10 @@
 
 @layer base {
   :root {
+    /* Height the launch banner reserves at the top of the page.
+       Set to the banner height by LaunchBanner when visible, 0 otherwise. */
+    --launch-h: 0px;
+
     --bg-base:     #07070d;
     --bg-surface:  #0d0e16;
     --bg-elevated: #151725;
